@@ -12,7 +12,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
         <a class="navbar-brand" href="index.html">DeezWeb</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -36,19 +36,22 @@
           <h1>Bienvenue sur DeezWeb</h1>
           <p>L'application qui permet facilement d'écouter de la musique.</p>
         </section>
-        <section class="random-favorites">
-          <div class="description">
-            <div class="cover" id="cover"></div>
-            <div class="track">
-                <p id="title" class="title"></p>
-                <div class="credit">
-                  <p id="artist"  class="artist"></p> 
-                  <p class="album"></p>
-              </div>
-            </div>         
-          </div>
-          <div class="musicPlayer">
-
+        <section class="random">
+          <div class="randomCard">
+              <div class="description">
+                  <img class="cover" id="coverImg" src=>
+                  <div class="track">
+                      <p class="song" id="song"></p>
+                      <div class="credit">
+                        <p id="artist" class="artist"></p>
+                        <p id="album" class="album"></p>
+                    </div>
+                  </div>         
+                </div>
+                <audio controls id="musicPlayer" class="musicPlayer"></audio>
+                <button class="addFavorites">
+                    <i class="far fa-heart"></i> Ajouter aux favoris
+                </button>
           </div>
         </section>
       </main>

@@ -1,18 +1,50 @@
-// document.getElementById('submit').addEventListener("click", function(e){
-//     e.preventDefault();
-//     var inputValue = document.getElementById('title').value;
-//     console.log(inputValue);
-// });
+$( "#form" ).submit(function( event ) {
+    event.preventDefault();
 
-$.ajax({
-    url : "https://api.deezer.com/search?q=eminem&output=jsonp",
-    dataType : 'jsonp'
-}).done(function(musiques) {
+    var inputValue = $('#title').val();
+        console.log(inputValue);
+
+    $.ajax({
+        url : "https://api.deezer.com/search?q=" + inputValue + "&output=jsonp",
+        dataType : 'jsonp'
+    }).done(function(musiques) {
+        console.log(musiques);
+
+        for (let i = 0; i < musiques.data.length; i++) {
+            var cover = musiques.data[i].album.cover;
+                title = musiques.data[i].title;
+                artist = musiques.data[i].artist.name;
+                album =  musiques.data[i].album.title; 
+                player = musiques.data[i].preview;
+
+            $("#tracklist").append("<div id=card"+ [i] + " class=card></div>");
+            $("#card"+[i]).append("<div id=description"+[i]+ " class=description></div>");
+            $("#description"+[i]).append("<img src="+ cover + " class=cover>");
+            $("#description"+[i]).append("<div id=track"+ [i] + " class=track></div></div>");
+            $("#track"+[i]).append("<p class=song>" + title + " </p>");
+            $("#track"+[i]).append("<div id=credit"+ [i] + " class=credit ></div>");
+            $("#credit"+[i]).append("<p class=artist>" + artist + " </p>");
+            $("#credit"+[i]).append("<p class=album>" + album + " </p>");
+            $("#card"+[i]).append("<audio controls id=musicPlayer"+[i]+ " class=musicPlayer src="+player+"></audio>");
+            $("#card"+[i]).append("<button class=addFavorites> <i class=far fa-heart></i> Ajouter aux favoris</button>");
+
+         
 
 
-    console.log(musiques);
-    document.querySelector('#artist').innerHTML =
-        musiques.data.map(m => m.title).join('<br>');
+                // var cover = document.getElementById("coverImg");
+                // cover.src =  musiques.data[i].album.cover;
 
+                // title = document.getElementById("song");
+                // title.innerHTML =  musiques.data[i].title;
+
+                // artist = document.getElementById("artist");
+                // artist.innerHTML =  musiques.data[i].artist.name;
+
+                // album = document.getElementById("album");
+                // album.innerHTML =  musiques.data[i].album.title;
+        
+                // player = document.getElementById("musicPlayer");
+                // player.src =  musiques.data[i].preview;
+            }
+    });
 });
-
