@@ -34,7 +34,7 @@
       
     <main class="container mt-5">
         <h1>Recherche</h1>
-        <p>Rechercher un titre, un artiste ou un album sur DeezWeb.</p>
+        <p>Recherchez un titre, un artiste ou un album sur DeezWeb.</p>
 
         <form class="form" id="form" method="get" action="">
             <div class="form-group">
@@ -42,7 +42,7 @@
                 <input type="text" id="title" placeholder="Metallica, Kendrick Lamar...">
             </div>
             <div class="form-group">
-                <label for="sort">Trier</label>
+                <label for="sort">Trier : </label>
                 <select id="sort">
                     <option value="song" selected>Titre</option>
                     <option value="artist">Artiste</option>
@@ -51,27 +51,12 @@
                     <option value="note">Les mieux notés</option>
                 </select>               
             </div>
-            <input type="submit" id="submit" class="btn-submit">
+            <input type="submit" id="submit" class="btn-submit bg-dark">
         </form>
 
-        <section class="tracklist" id="tracklist">
-          <!-- <div class="card" id="card">
-            <div class="description">
-              <img class="cover" id="coverImg" src=>
-              <div class="track">
-                  <p class="song" id="song"></p>
-                  <div class="credit">
-                    <p id="artist" class="artist"></p>
-                    <p id="album" class="album"></p>
-                </div>
-              </div>         
-            </div>
-            <audio controls id="musicPlayer" class="musicPlayer"></audio>
-            <button class="addFavorites">
-                <i class="far fa-heart"></i> Ajouter aux favoris
-            </button>
-          </div> -->
-        </section>
+        <!--Container for TrackCard-->
+        <section class="tracklist" id="tracklist"></section>
+
     </main>
     <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
     <script src='js/search.js'></script>
