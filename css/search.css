@@ -1,3 +1,4 @@
+
 .form{
     border-top :1px solid grey;
     border-bottom :1px solid grey;
@@ -30,83 +31,4 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-}
-.card{
-    border-radius:12px;
-    font-size:14px;
-    margin-bottom:15px;
-    display:flex;
-    animation: fade 2s ease-out;
-    overflow: hidden;
-    flex-direction:row;
-    flex-wrap: wrap;
-    width:250px;
-    height:250px;
-    -webkit-box-shadow: 7px 7px 15px -7px rgba(135,132,135,1);
-    -moz-box-shadow: 7px 7px 15px -7px rgba(135,132,135,1);
-    box-shadow: 7px 7px 15px -7px rgba(135,132,135,1);
-    border:none;
-}
-.description{
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    height:50%;
-    width:100%;
-}
-.description p{
-    margin:0;
-}
-.cover{
-    max-width:120px;
-    height:120px;
-}
-.track{
-    word-break:break-word;
-    text-align:center;
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    flex-direction:column;
-    width:50%;
-}
-.song{
-    font-weight:bold;
-    text-align:center;
-}
-.credit{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content: center;
-}
-.album{
-    font-style: italic;
-    font-size:10px;
-}
-.musicPlayer{
-    height:50px;
-    width:90%;
-    margin: 0 auto;
-    outline:none;
-}
-.addFavorites, .addFavorites:focus{
-    height:40px;
-    width:70%;
-    border-radius:30px;
-    margin: 0 auto 10px;
-    background:rgba(223, 21, 21, 0.877);
-    border:0;
-    color:white;
-    outline:none;
-}
-@keyframes fade{
-    from{
-        opacity:0;
-        display:block;
-    }
-    to{
-        opacity: 1;
-        display:block;
-    }
 }

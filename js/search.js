@@ -41,6 +41,14 @@ $( "#form" ).submit(function(e) {
                     album =  musiques.data[i].album.title; 
                     player = musiques.data[i].preview;
 
+                    var favoriteSong = [
+                        { id : musiques.data[i].id },
+                        { cover : musiques.data[i].album.cover },
+                        { title : musiques.data[i].title },
+                        { artist : musiques.data[i].artist.name },
+                        { album : musiques.data[i].album.title }
+                    ];
+
                 $("#tracklist").append("<div id=card"+ [i] + " class=card></div>");
                 $("#card"+[i]).append("<div id=description"+[i]+ " class=description></div>");
                 $("#description"+[i]).append("<img src="+ cover + " class=cover>");
@@ -50,12 +58,29 @@ $( "#form" ).submit(function(e) {
                 $("#credit"+[i]).append("<p class=artist>" + artist + " </p>");
                 $("#credit"+[i]).append("<p class=album>" + album + " </p>");
                 $("#card"+[i]).append("<audio controls id=musicPlayer"+[i]+ " class=musicPlayer src="+player+"></audio>");
-                $("#card"+[i]).append("<button class=addFavorites>Ajouter aux favoris</button>");
-            }             
-            $(".addFavorites").click(function (e) {
+                $("#card"+[i]).append("<button id=addFavorites"+ [i] +" class=addFavorites>Ajouter aux favoris</button>");
+            }      
+            
+            $(".addFavorites").click(function(e) {
                 e.preventDefault();
-                    $(this).text($(this).text() == 'Ajouter aux favoris' ? 'Retirer des favoris' : 'Ajouter aux favoris');   
-            });
+                $(this).text($(this).text() == 'Ajouter aux favoris' ? 'Retirer des favoris' : 'Ajouter aux favoris');   
+                if($(this).text() == 'Retirer des favoris'){
+                    $(this).css({
+                        'backgroundColor': "transparent",
+                        'color': 'rgba(223, 21, 21, 0.877)',
+                        'border' : '1px solid rgba(223, 21, 21, 0.877)'
+                    });
+                }
+                else{
+                    $(this).css({
+                        'backgroundColor': "rgba(223, 21, 21, 0.877)",
+                        'color': 'white'
+                    });
+                }      
+            // LOCAL STORAGE
+                var favoriteSong_json = JSON.stringify(favoriteSong);
+                localStorage.setItem("objet",favoriteSong_json); 
+            });                      
         }
         else{
             $("#tracklist").html("Désolé, aucun résultat ne correspond à votre recherche...");
@@ -63,5 +88,3 @@ $( "#form" ).submit(function(e) {
     });
     $('#tracklist').html('').css('font-size', '30px');
 });
-
-
