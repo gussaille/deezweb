@@ -32,23 +32,23 @@
         </div>
     </nav>
       
-    <main class="container mt-5">
+    <main class="container mt-4">
         <h1>Recherche</h1>
         <p>Recherchez un titre, un artiste ou un album sur DeezWeb.</p>
 
         <form class="form" id="form" method="get" action="">
             <div class="form-group">
                 <label for="title">Titre : </label>
-                <input type="text" id="title" placeholder="Metallica, Kendrick Lamar...">
+                <input type="text" id="title" class="form-control form-control-lg" placeholder="Metallica, Kendrick Lamar, Roméo Elvis...">
             </div>
             <div class="form-group">
-                <label for="sort">Trier : </label>
-                <select id="sort">
+                <label for="sort" >Trier : </label>
+                <select id="sort" class="form-control form-control-sm">
                     <option value="song" selected>Titre</option>
                     <option value="artist">Artiste</option>
                     <option value="album">Album</option>
                     <option value="popularity">Les plus populaires</option>
-                    <option value="note">Les mieux notés</option>
+                    <option value="rank">Les mieux notés</option>
                 </select>               
             </div>
             <input type="submit" id="submit" class="btn-submit bg-dark">

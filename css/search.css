@@ -2,26 +2,26 @@
     border-top :1px solid grey;
     border-bottom :1px solid grey;
     display:flex;
-    flex-direction:row;
-    align-items:center;
+    width:100%;
+    padding:15px;
+    flex-direction:column;
+    align-items:flex-start;
     flex-wrap: wrap;
-    justify-content: space-between
+    justify-content: space-around;
 }
 .form-group{
-    margin:15px auto;
-    max-width:250px;
-    width:80%;
-}
-.form-group:first-child input{
-    width:80%;
-    max-width:300px;
+    width:100%;
 }
 .form .btn-submit{
-    width:100px;
+    max-width:150px;
     border:none;
     padding:10px;
     outline:none;
     color:white;
+    width:80%;
+    border-radius:20px;
+    margin:0 auto;
+
 }
 .tracklist{
     width:90%;
@@ -90,7 +90,7 @@
     margin: 0 auto;
     outline:none;
 }
-.addFavorites{
+.addFavorites, .addFavorites:focus{
     height:40px;
     width:70%;
     border-radius:30px;
@@ -98,7 +98,7 @@
     background:rgba(223, 21, 21, 0.877);
     border:0;
     color:white;
-    outline:0;
+    outline:none;
 }
 @keyframes fade{
     from{

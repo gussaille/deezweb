@@ -1,11 +1,33 @@
 $( "#form" ).submit(function(e) {
     e.preventDefault();
 
-    var inputValue = $('#title').val();
-    console.log(inputValue);
+    var inputValue = $('#title').val();  
+    var select = $('#sort').find('option:selected');
+    var selectValue = select.val();
+
+    // LOOP SELECT VALUE
+    switch (selectValue) {
+        case 'song':
+            selectValue = 'TRACK_ASC';
+            break;
+        case 'artist':
+            selectValue = 'ARTIST_ASC';
+            break;
+        case 'album':
+            selectValue = 'ALBUM_ASC';
+            break;
+        case 'popularity':
+            selectValue = 'RATING_ASC';
+            break;
+        case 'rank':
+            selectValue = 'RANKING';
+            break;
+        default:
+            selectValue = 'TRACK_ASC';
+    }
 
     $.ajax({
-        url : "https://api.deezer.com/search?q=" + inputValue + "&output=jsonp",
+        url : "https://api.deezer.com/search?q=" + inputValue + "&order=" + selectValue +"&output=jsonp",
         dataType : 'jsonp'
     }).done(function(musiques) {
         console.log(musiques);
@@ -28,8 +50,12 @@ $( "#form" ).submit(function(e) {
                 $("#credit"+[i]).append("<p class=artist>" + artist + " </p>");
                 $("#credit"+[i]).append("<p class=album>" + album + " </p>");
                 $("#card"+[i]).append("<audio controls id=musicPlayer"+[i]+ " class=musicPlayer src="+player+"></audio>");
-                $("#card"+[i]).append("<button class=addFavorites> <i class=far fa-heart></i> Ajouter aux favoris</button>");
-            }
+                $("#card"+[i]).append("<button class=addFavorites>Ajouter aux favoris</button>");
+            }             
+            $(".addFavorites").click(function (e) {
+                e.preventDefault();
+                    $(this).text($(this).text() == 'Ajouter aux favoris' ? 'Retirer des favoris' : 'Ajouter aux favoris');   
+            });
         }
         else{
             $("#tracklist").html("Désolé, aucun résultat ne correspond à votre recherche...");
@@ -39,4 +65,3 @@ $( "#form" ).submit(function(e) {
 });
 
 
-//LOCAL STORAGE
