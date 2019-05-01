@@ -49,17 +49,17 @@ $( "#form" ).submit(function(e) {
                         { album : musiques.data[i].album.title }
                     ];
 
-                $("#tracklist").append("<div id=card"+ [i] + " class=card></div>");
-                $("#card"+[i]).append("<div id=description"+[i]+ " class=description></div>");
-                $("#description"+[i]).append("<img src="+ cover + " class=cover>");
-                $("#description"+[i]).append("<div id=track"+ [i] + " class=track></div></div>");
+                $("#tracklist").append("<div id=card" + [i] + " class=card></div>");
+                $("#card"+[i]).append("<div id=description" + [i] + " class=description></div>");
+                $("#description"+[i]).append("<img src=" + cover + " class=cover>");
+                $("#description"+[i]).append("<div id=track" + [i] + " class=track></div></div>");
                 $("#track"+[i]).append("<p class=song>" + title + " </p>");
-                $("#track"+[i]).append("<div id=credit"+ [i] + " class=credit ></div>");
+                $("#track"+[i]).append("<div id=credit" + [i] + " class=credit ></div>");
                 $("#credit"+[i]).append("<p class=artist>" + artist + " </p>");
                 $("#credit"+[i]).append("<p class=album>" + album + " </p>");
-                $("#card"+[i]).append("<audio controls id=musicPlayer"+[i]+ " class=musicPlayer src="+player+"></audio>");
-                $("#card"+[i]).append("<button id=addFavorites"+ [i] +" class=addFavorites>Ajouter aux favoris</button>");
-            }      
+                $("#card"+[i]).append("<audio controls id=musicPlayer" + [i] + " class=musicPlayer src="+player+"></audio>");
+                $("#card"+[i]).append("<button id=addFavorites" + [i] + " class=addFavorites>Ajouter aux favoris</button>");
+            }     
             
             $(".addFavorites").click(function(e) {
                 e.preventDefault();
@@ -68,18 +68,20 @@ $( "#form" ).submit(function(e) {
                     $(this).css({
                         'backgroundColor': "transparent",
                         'color': 'rgba(223, 21, 21, 0.877)',
+                        'transition' : "0.2s ease-in",
                         'border' : '1px solid rgba(223, 21, 21, 0.877)'
                     });
                 }
                 else{
                     $(this).css({
+                        'transition' : "0.s ease-in",
                         'backgroundColor': "rgba(223, 21, 21, 0.877)",
                         'color': 'white'
                     });
-                }      
-            // LOCAL STORAGE
-                var favoriteSong_json = JSON.stringify(favoriteSong);
-                localStorage.setItem("objet",favoriteSong_json); 
+                }    
+                JSON.stringify(favoriteSong);
+                localStorage.setItem("favoris", JSON.stringify(favoriteSong));  
+           
             });                      
         }
         else{
