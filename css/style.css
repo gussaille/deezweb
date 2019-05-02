@@ -8,7 +8,7 @@
     font-size:40px;
 }
 .favorites-link i{
-transition: 0.5s ease-in;
+    transition: 0.5s ease-in;
 }
 .favorites-link:hover i{
     color:rgba(223, 21, 21, 0.877);
