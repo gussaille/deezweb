@@ -83,14 +83,22 @@
     border:1px solid transparent;
     color:white;
     outline:none;
+    transition: 0.2s ease-in;
     background-color: rgba(223, 21, 21, 0.877);
     outline:none;
+}
+.addFavorites::after{
+    content: "Ajouter aux favoris";
+}
+.removeFavorites::after{
+    content: "Retirer des favoris";
 }
 .removeFavorites, .removeFavorites:focus{
     height:40px;
     width:70%;
     border-radius:30px;
     margin: 0 auto 10px;
+    transition: 0.2s ease-in;
     border:1px solid  rgba(223, 21, 21, 0.877);
     color:rgba(223, 21, 21, 0.877);
     outline:none;

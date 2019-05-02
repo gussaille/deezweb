@@ -34,37 +34,41 @@ $( "#form" ).submit(function(e) {
 
             if(inputValue.length != 0){
             
-            for (let i = 0; i < musiques.data.length; i++) {
+            for (let i = 1; i < musiques.data.length; i++) {
                 var cover = musiques.data[i].album.cover;
                     title = musiques.data[i].title;
                     artist = musiques.data[i].artist.name;
                     album =  musiques.data[i].album.title; 
                     player = musiques.data[i].preview;
                 
-                let favoriteSong = { id : musiques.data[i].id,
-                    cover : musiques.data[i].album.cover,
-                    title : musiques.data[i].title,
-                    artist : musiques.data[i].artist.name,
-                    album : musiques.data[i].album.title };
+                let favoriteSong = {
+                     id : musiques.data[i].id,
+                     cover : musiques.data[i].album.cover,
+                     title : musiques.data[i].title,
+                     artist : musiques.data[i].artist.name,
+                     album : musiques.data[i].album.title,
+                     player: musiques.data[i].preview
 
+                };
+                
                 $("#tracklist").append("<div id=card" + [i] + " class=card></div>");
                 $("#card"+[i]).append("<div id=description" + [i] + " class=description></div>");
                 $("#description"+[i]).append("<img src=" + cover + " class=cover>");
-                $("#description"+[i]).append("<div id=track" + [i] + " class=track></div></div>");
+                $("#description"+[i]).append("<div id=track" + [i] + " class=track></div>");
                 $("#track"+[i]).append("<p class=song>" + title + " </p>");
                 $("#track"+[i]).append("<div id=credit" + [i] + " class=credit ></div>");
                 $("#credit"+[i]).append("<p class=artist>" + artist + " </p>");
                 $("#credit"+[i]).append("<p class=album>" + album + " </p>");
                 $("#card"+[i]).append("<audio controls id=musicPlayer" + [i] + " class=musicPlayer src=" + player + "></audio>");
-                $("#card"+[i]).append("<button id=addFavorites" + [i] + " class= >Ajouter aux favoris</button>");
-               
-                // console.log(!JSON.parse(localStorage.getItem("favoris")).find(item => item.id === favoriteSong.id));
-                $('#addFavorites' + [i]).addClass( !JSON.parse(localStorage.getItem("favoris")).find(item => item.id === favoriteSong.id) ? "addFavorites" : "removeFavorites");
-             
+                $("#card"+[i]).append("<button id=addFavorites" + [i] + " class=></button>"); 
+
+                let storage = JSON.parse(localStorage.getItem("favoris"));
+                $('#addFavorites' + [i]).addClass( !(storage && storage.find(item => item.id === favoriteSong.id)) ? "addFavorites" : "removeFavorites");
+
                 $('#card'+ [i]).find('#addFavorites' +[i]).click(function(e) {
                     e.preventDefault();
-                    $(this).text($(this).text() == 'Ajouter aux favoris' ? 'Retirer des favoris' : 'Ajouter aux favoris');   
-                    if($(this).text() == 'Retirer des favoris'){
+             
+                    if($(this).hasClass("addFavorites")){
                         $(this).addClass('removeFavorites');
                         $(this).removeClass('addFavorites');
 
