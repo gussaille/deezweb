@@ -55,30 +55,27 @@ $( "#form" ).submit(function(e) {
                 $("#track"+[i]).append("<div id=credit" + [i] + " class=credit ></div>");
                 $("#credit"+[i]).append("<p class=artist>" + artist + " </p>");
                 $("#credit"+[i]).append("<p class=album>" + album + " </p>");
-                $("#card"+[i]).append("<audio controls id=musicPlayer" + [i] + " class=musicPlayer src="+player+"></audio>");
-                $("#card"+[i]).append("<button id=addFavorites" + [i] + " class=addFavorites>Ajouter aux favoris</button>");
+                $("#card"+[i]).append("<audio controls id=musicPlayer" + [i] + " class=musicPlayer src=" + player + "></audio>");
+                $("#card"+[i]).append("<button id=addFavorites" + [i] + " class= >Ajouter aux favoris</button>");
                
-                $('#card'+ [i]).find('#addFavorites' + [i]).click(function(e) {
+                // console.log(!JSON.parse(localStorage.getItem("favoris")).find(item => item.id === favoriteSong.id));
+                $('#addFavorites' + [i]).addClass( !JSON.parse(localStorage.getItem("favoris")).find(item => item.id === favoriteSong.id) ? "addFavorites" : "removeFavorites");
+             
+                $('#card'+ [i]).find('#addFavorites' +[i]).click(function(e) {
                     e.preventDefault();
                     $(this).text($(this).text() == 'Ajouter aux favoris' ? 'Retirer des favoris' : 'Ajouter aux favoris');   
                     if($(this).text() == 'Retirer des favoris'){
-                        $(this).css({
-                            'backgroundColor': "transparent",
-                            'color': 'rgba(223, 21, 21, 0.877)',
-                            'transition' : "0.2s ease-in",
-                            'border' : '1px solid rgba(223, 21, 21, 0.877)'
-                        });
-     
+                        $(this).addClass('removeFavorites');
+                        $(this).removeClass('addFavorites');
+
                         let fav = JSON.parse(localStorage.getItem("favoris")) || [];
                         fav.push(favoriteSong);
-                        localStorage.setItem("favoris", JSON.stringify(fav));
+                        localStorage.setItem("favoris", JSON.stringify(fav));       
                     }
-                    else{
-                        $(this).css({
-                            'transition' : "0.2s ease-in",
-                            'backgroundColor': "rgba(223, 21, 21, 0.877)",
-                            'color': 'white'
-                        });
+                    else{  
+                        $(this).removeClass('removeFavorites'); 
+                        $(this).addClass('addFavorites');                     
+
                         let fav = JSON.parse(localStorage.getItem("favoris")); 
                         fav = fav.filter(fav => { 
                             if( fav.id == favoriteSong.id ){
@@ -86,8 +83,8 @@ $( "#form" ).submit(function(e) {
                             }
                             return true;
                         });
-                        localStorage.setItem("favoris", JSON.stringify(fav));
-                    }         
+                        localStorage.setItem("favoris", JSON.stringify(fav));  
+                    }              
                 });                        
             }              
         }

@@ -74,14 +74,27 @@
     margin: 0 auto;
     outline:none;
 }
+
 .addFavorites, .addFavorites:focus{
     height:40px;
     width:70%;
     border-radius:30px;
     margin: 0 auto 10px;
-    background:rgba(223, 21, 21, 0.877);
     border:1px solid transparent;
     color:white;
+    outline:none;
+    background-color: rgba(223, 21, 21, 0.877);
+    outline:none;
+}
+.removeFavorites, .removeFavorites:focus{
+    height:40px;
+    width:70%;
+    border-radius:30px;
+    margin: 0 auto 10px;
+    border:1px solid  rgba(223, 21, 21, 0.877);
+    color:rgba(223, 21, 21, 0.877);
+    outline:none;
+    background-color:transparent;
     outline:none;
 }
 @keyframes fade{
