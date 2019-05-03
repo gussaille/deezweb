@@ -6,7 +6,7 @@ $(document).ready(function(){
         var select = $('#sort').find('option:selected');
         var selectValue = select.val();
 
-        // LOOP SELECT VALUE
+        // LOOP SELECTVALUE
         switch (selectValue) {
             case 'song':
                 selectValue = 'TRACK_ASC';

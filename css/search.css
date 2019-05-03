@@ -1,7 +1,6 @@
-
 .form{
-    border-top :1px solid #A9CAE9;
-    border-bottom :1px solid #A9CAE9;
+    border-top :1px solid lightgrey;
+    border-bottom :1px solid lightgrey;
     display:flex;
     width:100%;
     padding:15px;
