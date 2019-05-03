@@ -33,7 +33,7 @@ $(document).ready(function(){
         }).done(function(musiques) {
             console.log(musiques);
 
-                if(inputValue.length != 0){
+            if(inputValue.length != 0){
                 
                 for (let i = 1; i < musiques.data.length; i++) {
                     var cover = musiques.data[i].album.cover;

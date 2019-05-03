@@ -24,7 +24,7 @@ $(document).ready(function(){
     // }
     let fav = JSON.parse(localStorage.getItem("favoris")); 
     let favRandom = Math.floor(Math.random() * fav.length);
-    fav = fav[favRandom]; 
+    fav = fav[favRandom];
 
     $('#randomFavorite').append("<div class=card id=card"+ favRandom +"></div>");
     $("#card"+ favRandom).append("<div id=description" + favRandom + " class=description></div>");

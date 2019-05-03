@@ -1,9 +1,11 @@
 .blockTitle{
-    background:#E9E9E9;
+    background:#EAFAFF;
     width:100%;
     max-width:780px;
+    border-radius:20px;
     margin:15px auto;
     display:flex;
+    color:#154881;
     align-items:center;
     justify-content: center;
     flex-direction: column;

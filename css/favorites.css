@@ -5,3 +5,10 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
+h1, .instruction{
+    text-align:center;
+}
+.instruction{
+    font-size:22px;
+    margin-bottom:20px;
+}

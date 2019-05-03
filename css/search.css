@@ -13,10 +13,14 @@
 .form-group{
     width:50%;
 }
+.form-group label{
+    font-size:18px
+}
 .form-group input, .form-group select{
-    width:80%;
+    width:95%;
 }
 .form .btn-submit{
+    background-color:#3689CC;
     max-width:150px;
     border:none;
     padding:10px;
@@ -24,8 +28,10 @@
     color:white;
     width:80%;
     border-radius:20px;
-    margin:0 auto;
-
+    margin:10px auto 0;
+}
+.form .btn-submit:hover{
+    background-color: #154881;
 }
 .tracklist{
     width:90%;
