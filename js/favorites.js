@@ -1,5 +1,6 @@
 $(document).ready(function(){
     // BOUCLE POUR GENERER LES FAVORIS
+
     for (let i = 0; i < Object.keys(localStorage.favoris).length; i++) {
         let fav = JSON.parse(localStorage.getItem("favoris"))[i]; 
     
@@ -17,6 +18,7 @@ $(document).ready(function(){
         // FONCTION DE RETRAIT DU FAVORIS
         $('.removeFavorites').on("click", function() {
             $(this).parent().remove();
+            // fav.removeItem();
         });
     }
 });
