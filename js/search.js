@@ -98,6 +98,12 @@ $(document).ready(function(){
                 $("#tracklist").html("Désolé, aucun résultat ne correspond à votre recherche...");
             }
         });
-        $('#tracklist').html('').css('font-size', '30px');
+        $('#tracklist').html('').css('font-size', '24px');
     });
+
+    $("a[href='#top_bar']").click(function() {
+        $("html, body").animate({ 
+            scrollTop: 0
+        }, 1000);        
+    });	 
 });

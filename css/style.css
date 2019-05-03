@@ -1,4 +1,9 @@
+body{
+    position:relative;
+}
 .navbar{
+    position:relative;
+    z-index:9999;
     background-color:#154881;
     color:white;
 }
@@ -10,7 +15,9 @@
 }
 .container{
     max-width:980px;
-    margin:30px auto;
+    margin:30px auto 0;
+    position:relative;
+    min-height:100vh;
 }
 .container h1{
     font-size:40px;
@@ -130,6 +137,7 @@
     background:rgba(202, 20, 20, 0.877);
     color:white;
 }
+
 @keyframes fade{
     from{
         opacity:0;
@@ -140,11 +148,15 @@
         display:block;
     }
 }
- @-webkit-keyframes spinner {
-    from { -webkit-transform: rotateY(0deg);    }
-    to   { -webkit-transform: rotateY(-360deg); }
-  }
-  @keyframes spinner {
+@-webkit-keyframes spinner {
+    from { 
+        -webkit-transform: rotateY(0deg);    
+    }
+    to   { 
+        -webkit-transform: rotateY(-360deg); 
+    }
+}
+@keyframes spinner {
     from {
       -moz-transform: rotateY(0deg);
       -ms-transform: rotateY(0deg);
@@ -156,3 +168,23 @@
       transform: rotateY(-360deg);
     }
   }
+@keyframes slide{
+    from {
+        opacity:0;
+        transform: translateX(-250%);
+    }
+    to{
+        opacity:1;
+        transform: translateX(0);   
+    }   
+}
+@keyframes slideDown{
+    from {
+        opacity:0;
+        transform: translateY(-200px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);   
+    }   
+}

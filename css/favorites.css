@@ -8,7 +8,11 @@
 h1, .instruction{
     text-align:center;
 }
+h1{
+    animation:slideDown 1s ease-out;
+}
 .instruction{
+    animation: slideDown 0.7s ease-out;
     font-size:22px;
     margin-bottom:20px;
 }

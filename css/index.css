@@ -26,3 +26,12 @@
     background:#3689CC;
     border-radius:30px;
 }
+.card{
+    animation: slide 1.2s ease-out;
+}
+/* .illustration-left{
+    position:absolute;
+    bottom:0;
+    left: 0;
+    animation: slide 1.5s ease-out;
+} */

@@ -1,7 +1,7 @@
 
 .form{
-    border-top :1px solid grey;
-    border-bottom :1px solid grey;
+    border-top :1px solid #A9CAE9;
+    border-bottom :1px solid #A9CAE9;
     display:flex;
     width:100%;
     padding:15px;
@@ -33,6 +33,12 @@
 .form .btn-submit:hover{
     background-color: #154881;
 }
+h1{
+    animation:slideDown 1s ease-out;
+}
+.instruction{
+    animation: slideDown 0.7s ease-out;
+}
 .tracklist{
     width:90%;
     margin:20px auto;
@@ -40,4 +46,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+.arrow_top{
+    position:fixed;
+    bottom: 30px;
+    right:30px;
+    color:#79AEDA;
 }
