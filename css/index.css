@@ -15,3 +15,14 @@
     display:flex;
     justify-content: center;
 }
+.changeTrack, .changeTrack:focus{
+    width:250px;
+    margin:0 auto;
+    border: 0;
+    outline:0;
+    padding:15px;
+    color:white;
+    display:block;
+    background:#3689CC;
+    border-radius:30px;
+}
