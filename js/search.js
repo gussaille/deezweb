@@ -31,7 +31,6 @@ $(document).ready(function(){
             url : "https://api.deezer.com/search?q=" + inputValue + "&order=" + selectValue +"&output=jsonp",
             dataType : 'jsonp'
         }).done(function(musiques) {
-            console.log(musiques);
 
             if(inputValue.length != 0){
                 
